@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(107, 164, 255);
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+.location,
+.tempreture {
+  height: 20vh;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: black; */
+}
+.tempreture{
+  flex-direction: column;
+}
+.degree{
+  display: flex;
+}
+.degree #number {
+  font-size: 40px;
+}
+#frame {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  border: 5px solid #ffffff;
+}
