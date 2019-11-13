@@ -6,19 +6,24 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="frame">
-      <div class="location">
-        <p id="timezone">Timezone</p>
-        <canvas id="icon" width="128" height="128"></canvas>
-      </div>
-      <div class="tempreture">
-          <div class="degree">
-            <p id="number">温度</p>
-            <p id="unit">C</p>
-          </div>
-          <p id="description">Loading...</p>
+    <div class="weather-app">
+      <div id="frame">
+        <div class="location">
+          <canvas id="icon" width="150" height="150"></canvas>
+          <p id="description"></p>
+        </div>
+        <div class="tempreture">
+            <p id="timezone">Loading...</p>
+            <div class="degree">
+              <p>温度：<span id="number"></span>&#8451;</p>
+            </div>
+            <div class="humidity">
+              <p>湿度：<span id="number2"></span>%</p>
+            </div>
+        </div>
       </div>
     </div>
+
     <script src="skycons.js"></script>
     <script src="script.js"></script>
   </body>
