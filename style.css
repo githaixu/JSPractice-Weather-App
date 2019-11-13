@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
+.weather-app {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,16 +22,15 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-size: 25px;
   /* background-color: black; */
 }
 .tempreture{
   flex-direction: column;
+  margin-top: 25px;
 }
 .degree{
   display: flex;
-}
-.degree #number {
-  font-size: 40px;
 }
 #frame {
   width: 600px;
