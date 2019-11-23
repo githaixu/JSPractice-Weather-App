@@ -17,12 +17,11 @@ window.addEventListener('load', function(e){
     geolocation.getCurrentPosition(success, error);
     //成功のコールバック関数の作成
     function success(position){
-      //成功した場合緯度と経度を取得する
+      //現在位置の緯度と経度に基づいてAPIから気温などの情報を取得する
       long = position.coords.longitude;
       lat = position.coords.latitude;
-      //現在位置の緯度と経度に基づいてAPIから気温などの情報を取得する
-      const PROXY = 'https://cors-anywhere.herokuapp.com/';
       //CROS問題を解決するためにPROXYを設置
+      const PROXY = 'https://cors-anywhere.herokuapp.com/';
       const API = `${PROXY}https://api.darksky.net/forecast/3fcf9c5ab53a46503f8931f93a5ecc98/${lat},${long}?units=si&lang=ja&exclude=flags,hourly,daily`;
       //fetchでAPIにリクエストして　fetchからpromiseが帰ってくる
       fetch(API)
@@ -30,11 +29,11 @@ window.addEventListener('load', function(e){
         .then(json => {
           const {temperature, summary, icon, humidity} = json.currently;
           //DOMにAPIから取得した情報をセットする
-          number.textContent = temperature;
+          number.textContent = Math.round(temperature);
           description.textContent = summary;
           timezone.textContent = json.timezone;
           number2.textContent = humidity*100;
-          setIcon(icon, domicon)
+          setIcon(icon, domicon);
         })
     }
     //失敗のコールバック関数の作成
@@ -46,12 +45,11 @@ window.addEventListener('load', function(e){
   }else{
     alert('the geolocaton function is not work in this browser');
   }
-
+  //https://darkskyapp.github.io/skycons/
   function setIcon(icon, domicon){
     const skycons = new Skycons({color : "white"});
     const currentIcon = icon.replace(/-/g, "_").toUpperCase();
     skycons.play();
     return skycons.set(domicon, Skycons[currentIcon]);
   }
-
 });
