@@ -1,1 +1,0 @@
-# JSPractice-Weather-App
